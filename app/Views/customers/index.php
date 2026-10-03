@@ -63,7 +63,7 @@
 
 <div class="container">
     <div class="header">
-        <h1><?= esc($title) ?></h1>
+        <h1><?= esc($title ?? 'Customer Directory') ?></h1>
         <a href="<?= base_url('customers/new') ?>" class="btn">+ Add Customer</a>
     </div>
 

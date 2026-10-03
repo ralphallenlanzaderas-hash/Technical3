@@ -10,10 +10,15 @@ class UserModel extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
-    protected $protectFields    = true;
-    protected $allowedFields    = ['username', 'full_name', 'email', 'password', 'role', 'avatar'];
+    protected $allowedFields    = ['username', 'full_name', 'email', 'created_at'];
 
-    protected $useTimestamps = true;
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
+    /**
+     * Fetch the single demo user record.
+     *
+     * @return array|null
+     */
+    public function getDemoUser(): ?array
+    {
+        return $this->first();
+    }
 }
